@@ -1,4 +1,29 @@
-# CSC-495-Final-Project
+## Human Pose Detection on Arduino Portenta H7
+
+The goal of this project is to deploy a trained Convolution Neural Network (CNN) to a microprocessor. In our case, we trained a CNN to detect human posture. The model is trained on more than 17000 320 x 320 images to capture key datapoints (ankle, wrist, shoulders, hips) in an image of human. The trained model is then prunned and quantized before deploying to Arduino Portenta H7.
+
+#### Methodology:
++ To train the model, we used the MPII Human Pose Dataset. You can download the images from [here](https://datasets.d2.mpi-inf.mpg.de/andriluka14cvpr/mpii_human_pose_v1.tar.gz).
++ Unzip the images to `data/images` directory.
++ The annotation for the images is already inside the `data` directory.
++ The annotation format from MPII was changed to meet the requirements of this project. So, run the `update_annotation_format.ipynb` notebook. This will create a new dataset named `updated_mpii_dataset.csv` under `data` directory.
++ Once you have the unzipped images and the *updated* MPII dataset, run `image_manipulation.ipynb` notebook. This notebook makes different adjustments to the images like cropping, resizing and the new images are saved inside `data/updated` directory.
++ With the manipulation done on the images, the pixel coordinates also have to be updated to match the datapoints correctly in new images. The `image_manipulation.ipynb` notebook also saves the new annotation as `data/final_model_ready_dataset.csv`.
++ Additionally, to confirm that the datapoints in the updated images are correctly lined up with the joints in the images, a copy of each image highlighting the posture is stored inside `data/confirmation` directory.
++ Inside `updated` and `confirmation` directory, you will find multiple folder, each folder containing at most 100 images.
++ Since we are manipulation a large number of images, the system might run out of memory and the kernel might die at some point. If that happens, run the `image_manipulation.ipynb` notebook again as long as the progress bar does not hit 100%. The previously manipulated images and the annotation will be stored in temporary files and the notebook will continue from a checkpoint.
++ Run the code till the last cell to remove the temporary files.
++ If you do not want to run the manipulation notebook, you can download the new images and dataset from the links below:
+  - [Updated images](https://drive.google.com/file/d/19sLSGhUiB5DDTKFmY_PRcGHa6jmgbU7v/view?usp=sharing) - unzip the files inside `data/updated` directory
+  - [Confirmation images](https://drive.google.com/file/d/1WrNZmDgZTgQ_e1wReHbrxLLhO57AuWvT/view?usp=sharing) - unzip the files under `data/confirmation` directory
+  - [Model ready annotation dataset](https://drive.google.com/file/d/1tIxbZ3NE1jQJRF0FUcDXetxHoXZCGKGn/view?usp=sharing) - place the file under `data` directory
+
+
+
+
+
+
+
 Group repository for our final project in 495
 
 Object tracking system\
