@@ -16,7 +16,7 @@ The goal of this project is to deploy a trained Convolution Neural Network (CNN)
 + If you do not want to run the manipulation notebook, you can download the new images and dataset from the links below:
   - [Updated images](https://drive.google.com/file/d/19sLSGhUiB5DDTKFmY_PRcGHa6jmgbU7v/view?usp=sharing) - unzip the files inside `data/updated` directory
   - [Confirmation images](https://drive.google.com/file/d/1WrNZmDgZTgQ_e1wReHbrxLLhO57AuWvT/view?usp=sharing) - unzip the files under `data/confirmation` directory
-  - [Real Time images](https://drive.google.com/drive/folders/1koMEh2G0_bpK0OmsNXcrgOsGkm0eBac8?usp=sharing)
+  - [Real Time images](https://drive.google.com/file/d/1uS8mvizf45lyPkPpTFzVXRpeqT4v52Er/view?usp=sharing) - unzip th fu=iles under `data/real_time` directory
   - [Model ready annotation dataset](https://drive.google.com/file/d/1tIxbZ3NE1jQJRF0FUcDXetxHoXZCGKGn/view?usp=sharing) - place the file under `data` directory
 
 
