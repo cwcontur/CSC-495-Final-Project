@@ -2,6 +2,19 @@
 
 The goal of this project is to deploy a trained Convolution Neural Network (CNN) to a microprocessor. In our case, we trained a CNN to detect human posture. The model is trained on more than 17000 320 x 320 images to capture key datapoints (ankle, wrist, shoulders, hips) in an image of human. The trained model is then prunned and quantized before deploying to Arduino Portenta H7.
 
+## MPII Human Pose Dataset
+[MPII Human Pose dataset](http://human-pose.mpi-inf.mpg.de/#overview) is a state of the art benchmark for evaluation of articulated human pose estimation. The dataset includes around 25K images containing over 40K people with annotated body joints. The images were systematically collected using an established taxonomy of every day human activities. 
+
+Author: Mykhaylo Andriluka and Leonid Pishchulin and Peter Gehler and Schiele, Bernt\
+Title: 2D Human Pose Estimation: New Benchmark and State of the Art Analysis\
+Booktitle: IEEE Conference on Computer Vision and Pattern Recognition (CVPR)\
+Year: 2014\
+Month: June
+
+### Download
+- [Images (12.9 GB)](https://datasets.d2.mpi-inf.mpg.de/andriluka14cvpr/mpii_human_pose_v1.tar.gz)
+- [Annotations (12.5 MB)](https://datasets.d2.mpi-inf.mpg.de/andriluka14cvpr/mpii_human_pose_v1_u12_2.zip)
+
 #### Methodology:
 + To train the model, we used the MPII Human Pose Dataset. You can download the images from [here](https://datasets.d2.mpi-inf.mpg.de/andriluka14cvpr/mpii_human_pose_v1.tar.gz).
 + Unzip the images to `data/images` directory.
@@ -16,18 +29,19 @@ The goal of this project is to deploy a trained Convolution Neural Network (CNN)
 + If you do not want to run the manipulation notebook, you can download the new images and dataset from the links below:
   - [Updated images](https://drive.google.com/file/d/19sLSGhUiB5DDTKFmY_PRcGHa6jmgbU7v/view?usp=sharing) - unzip the files inside `data/updated` directory
   - [Confirmation images](https://drive.google.com/file/d/1WrNZmDgZTgQ_e1wReHbrxLLhO57AuWvT/view?usp=sharing) - unzip the files under `data/confirmation` directory
+  - [Real Time images](https://drive.google.com/file/d/1Xjros5UcFwOydrF0bl_s0EbWZeFye95D/view?usp=sharing) - unzip th files under `data/real_time` directory
   - [Model ready annotation dataset](https://drive.google.com/file/d/1tIxbZ3NE1jQJRF0FUcDXetxHoXZCGKGn/view?usp=sharing) - place the file under `data` directory
 
+### Model/Architecture Resources:
+- [TensorFlow](https://www.tensorflow.org/)
+- [MobileNet V2](https://www.tensorflow.org/api_docs/python/tf/keras/applications/mobilenet_v2)
+- [MobileNet V3](https://www.tensorflow.org/api_docs/python/tf/keras/applications/mobilenet_v3)
+- [TensorFlow Blog](https://blog.tensorflow.org/2018/05/real-time-human-pose-estimation-in.html)
+- [PoseNet Repo](https://github.com/tensorflow/tfjs-models/tree/master/posenet)
 
 
 
-
-
-
-Group repository for our final project in 495
-
-Object tracking system\
-Posture Detection:
+### Posture Detection:
 - Machine learning model to detect joint positions
 - Servo motors to control small model that replicates movement seen from vision (Motor driver board)
 - Model will just detect and replicate posture/movement
@@ -36,9 +50,5 @@ Posture Detection:
 - Use multiple portentas to generalize movement from different vision angles
 - “Stick figure” model to represent joints + movement in simple fashion
 
-Links:
-- https://www.amazon.com/10Pcs-Servos-Helicopter-Airplane-Controls/dp/B08KY49SFX/ref=asc_df_B08KY49SFX/?tag=hyprod-20&linkCode=df0&hvadid=475740798427&hvpos=&hvnetw=g&hvrand=13111227009810616170&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9009647&hvtargid=pla-1186208374440&psc=1
-- https://www.amazon.com/Longruner-Stepper-Uln2003-arduino-LK67/dp/B015RQ97W8/ref=asc_df_B015RQ97W8/?tag=hyprod-20&linkCode=df0&hvadid=241948263033&hvpos=&hvnetw=g&hvrand=700369305293697484&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9009648&hvtargid=pla-569411026209&psc=1
+Annotations:
 - https://www.makesense.ai/
-
-Think a little bit smaller in the beginning to make sure that you have a concept that works for the micro controller and the machine learning model. Condense down to smallest unit before starting.
